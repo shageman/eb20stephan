@@ -60,6 +60,7 @@ RSpec.describe EngBootcamp2020Stephan do
     around(:each) do |example|
       previous_env = EngBootcamp2020Stephan.instance_variable_get(:@env)
       EngBootcamp2020Stephan.env = configured_env
+      example.run
       EngBootcamp2020Stephan.env = previous_env
     end
 
