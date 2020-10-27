@@ -46,6 +46,10 @@ RSpec.describe EngBootcamp2020Stephan do
         allow(Rails).to receive(:env).and_return rails_env
       end
 
+      after do
+        Object.send(:remove_const, "Rails")
+      end
+
       it 'can output hello gusto with Rails env' do
         expect(subject).to eq('hello gusto - ENV TEST')
       end
